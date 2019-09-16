@@ -1585,7 +1585,7 @@ var defaultRules /* : DefaultRules */ = {
         match: inlineRegex(/^(`+)([\s\S]*?[^`])\1(?!`)/),
         parse: function(capture, parse, state) {
             return {
-                content: capture[2].replace(INLINE_CODE_ESCAPE_BACKTICKS_R, "$1")
+                content: capture[2].replace(INLINE_CODE_ESCAPE_BACKTICKS_R, "$1$2$3")
             };
         },
         react: function(node, output, state) {
